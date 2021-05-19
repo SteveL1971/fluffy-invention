@@ -1,0 +1,28 @@
+.container {
+    width: 90%;  
+}
+
+.top {
+    min-width: 320px;
+    max-width: 1024px;
+    margin: auto;
+    background-color: rgba(93, 102, 141, 0.178);
+}
+
+.bottom {
+    min-width: 320px;
+    max-width: 1024px;
+    margin: auto;
+    background-color: rgba(236, 238, 247, 0.473);
+}
+
+
+/* -------------------------------------------------------------------------------------------- */
+/* Extra large devices (large desktops, 992px and up) */
+/* -------------------------------------------------------------------------------------------- */
+
+@media (min-width: 992px) {
+    .container {
+        width: 70%;
+    }
+}

@@ -1,0 +1,50 @@
+nav {
+    padding: 1rem 0rem 1rem 0rem;
+  }
+  nav .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:auto;
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 70%;
+  }
+  a {
+    color: #444242;
+    text-decoration: none;
+  }
+
+    /* -------------------------------------------------------------------------------------------- */
+/* Extra large devices (large desktops, 400px and up) */
+/* -------------------------------------------------------------------------------------------- */
+
+@media (min-width: 400px){ 
+  ul {
+    width: 60%;
+  }
+}
+
+  /* -------------------------------------------------------------------------------------------- */
+/* Extra large devices (large desktops, 576px and up) */
+/* -------------------------------------------------------------------------------------------- */
+
+@media (min-width: 576px){ 
+  ul {
+    width: 45%;
+  }
+}
+
+/* -------------------------------------------------------------------------------------------- */
+/* Extra large devices (large desktops, 1200px and up) */
+/* -------------------------------------------------------------------------------------------- */
+
+@media (min-width: 1200px) { 
+  ul {
+    width: 30%;
+  }
+}

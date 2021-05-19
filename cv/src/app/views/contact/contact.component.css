@@ -1,0 +1,27 @@
+.btnStyle {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.header {
+    /* background-color:rgba(93, 102, 141, 0.178); */
+    background-color: rgba(73, 97, 204, 0.178);
+}
+
+.backStyle {
+    /* background-color: rgba(236, 238, 247, 0.651); */
+    background-color: rgba(73, 97, 204, 0.178);
+}
+
+.bar {
+    background-color:rgba(93, 102, 141, 0.178);
+}
+
+.radiusBottom {
+    border-radius: 0px 0px 10px 10px;
+}
+.radiusTop {
+    border-radius: 10px 10px 0px 0px;
+}
