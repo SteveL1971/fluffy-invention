@@ -1,16 +1,20 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+}
+
 .leftSide {
     background-color: rgba(93, 102, 141, 0.178);
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 10px 10px 0px 0px;
     padding: 1rem;
     height: 1160px;
     flex: 1;
-    text-align: left;
+    text-align: center;
 }
 .rightSide {
     background-color: rgba(73, 97, 204, 0.178);
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 0px 0px 10px 10px;
     padding: 1rem;
-    /* width: 300px; */
     height: 1160px;
     flex: 1.7;
 }
@@ -29,10 +33,7 @@
     width: 240px;
 }
 
-.layout {
-    display: flex;
-    flex-direction: row;
-}
+
 
 .progress {
     height:12px;
@@ -101,10 +102,39 @@ ul, p {
     flex-direction: column;
 }
 
+H5 {
+    font-size: 0.9rem;
+    font-weight: 700rem;
+}
+
 /* -------------------------------------------------------------------------------------------- */
-/* Extra large devices (large desktops, 1200px and up) */
+/* Extra large devices (large desktops, 768px and up) */
 /* -------------------------------------------------------------------------------------------- */
 
-@media (min-width: 1200px) { 
+@media (min-width: 768px) { 
+
+    .layout {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .leftSide {
+        border-radius: 10px 0px 0px 10px;
+        padding: 1rem;
+        height: 1160px;
+        flex: 1;
+        text-align: left;
+    }
+    .rightSide {
+        border-radius: 0px 10px 10px 0px;
+        padding: 1rem;
+        height: 1160px;
+        flex: 1.7;
+    }
+
+    H5 {
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
 
 }

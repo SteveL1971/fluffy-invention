@@ -49,7 +49,7 @@ small {
 }
 .kIcons {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .contactRow {
@@ -106,9 +106,12 @@ ul, p {
 }
 
 /* -------------------------------------------------------------------------------------------- */
-/* Extra large devices (large desktops, 1200px and up) */
+/* Extra large devices (large desktops, 768px and up) */
 /* -------------------------------------------------------------------------------------------- */
 
-@media (min-width: 1200px) { 
-
+@media (min-width: 768px) { 
+    .kIcons {
+        display: flex;
+        flex-direction: row;
+    }
 }
