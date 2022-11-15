@@ -1,5 +1,5 @@
 nav {
-    padding: 1rem 0rem 1rem 0rem;
+    /* padding: 1rem 0rem 1rem 0rem; */
   }
   nav .container {
     width: 100%;
@@ -40,6 +40,7 @@ nav {
 @media (min-width: 400px){ 
   ul {
     width: 60%;
+
   }
 }
 

@@ -1,13 +1,23 @@
 <div class="layout py-4">
     <div class="topHalf">
         <H1 class="px-2 py-1 mb-4 bar">STEVEN LYNE</H1>
-        <img id="steve" class="img-thumbnail mb-2" src="/assets/img/stevelyne3.jpg" alt="Steve Lyne">
+        <img id="steve" class="img-thumbnail mb-2" src="/assets/img/steven-lyne-cv-1.jpg" alt="Steve Lyne">
     </div>
     <div class="bottomHalf">
-        <H4 class="px-2 py-1 my-1 mb-3 bar">Vem är jag?</H4>
-        <p>Jag har mitt ursprung i England, men efter 25 år i Sverige har jag nu två länder jag kallar mitt hem. Uppvuxen i en semesterstad vid havet har jag en förkärlek för vatten. Som ung engagerade jag mig mycket inom scout verksamheten och lärde mig att uppskatta gemenskap likväl naturen. Redan tidigt hade jag ett brinnande intresse för datorer, och redan på 80-talet kunde jag programmera med språket BASIC.</p>
-        <p class="py-3">Under cirka 20 år har jag arbetat med olika chefsbefattningar inom tillverkningsindustrin. Jag trivs mycket bra i utmanande roller med tuffa uppsatta mål. Jag behärskar processoptimering väl, och gör det alltid med medkänsla. Nu ser jag fram emot att arbeta som front end utvecklare, så min kreativa sida äntligen får chansen att andas.</p>
-         <H4 class="py-1 px-2 mt-2 mb-4 bar">Kontaktuppgifter</H4>
+        <H4 class="px-2 py-1 my-1 mb-3 bar">{{language==='English'?'Who am I?':'Vem är jag?'}}</H4>
+        <i *ngIf="language==='Swedish'">
+            <p>Jag har mitt ursprung i England, men efter 25 år i Sverige har jag nu två länder jag kallar mitt hem. Uppvuxen i en semesterstad vid havet har jag en förkärlek för vatten. Som ung var jag mycket engagerat inom scout verksamheten och jag lärde mig att uppskatta gemenskap likväl naturen.</p>
+            <p class="py-3">Under cirka 20 år har jag arbetat med olika chefsbefattningar inom tillverkningsindustrin. Jag trivs mycket bra i utmanande roller med tuffa uppsatta mål. Jag har arbetat mycket med personalfrågor, målstyrning och processoptimering.</p> 
+            <p class="pb-3">Nu ser jag fram emot att arbeta som front-end utvecklare, så min kreativa sida får en chans att titta fram.</p>
+        </i>
+        <i *ngIf="language==='English'">
+            <p>I'm originally from England, but after having lived more than 25 years in Sweden I have two countries I can call home. I grew up in a holiday resort on the south coast of England, and I have always loved being close to water. When I was younger I was active within scouting, and I learned a lot about teamwork whilst fully appreciating nature.</p>
+            <p class="py-3">For the past 20 years I have worked with different management roles within the production industry sector. I work best in a challenging role where I'm striving to meet demanding goals. As personnel manager I have worked a lot with human relations, working towards goals and process optimization.</p> 
+            <p class="pb-3">Now I'm really looking forward to working as a Front-End developer, so I can be creative on a daily basis.</p>
+        </i>
+        
+
+        <H4 class="py-1 px-2 mt-2 mb-4 bar">{{language==='English'?'Contact details':'Kontaktuppgifter'}}</H4>
         <div class="kIcons mb-2">
             <div class="d-flex px-3 py-1 lFlex">
                 <i class="kLeft fas fa-map-marker-alt"></i>
@@ -18,7 +28,7 @@
             <div class="d-flex px-3 py-1 mFlex">
                 <i class="kLeft fas fa-phone"></i>
                 <div class="kRight">
-                    <small>070-395 96 25</small>
+                    <small>{{language==='English'?'+46703959625':'070-395 96 25'}}</small>
                 </div>
             </div>
             <div class="d-flex px-3 py-1 rFlex">

@@ -3,8 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  emailjsService: "service_yeq4em9",
+  emailjsTemplate: "template_bwgzsol",
+  emailjsPublicKey: "zj9-t916CTufVvqwO"
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

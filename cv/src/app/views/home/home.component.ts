@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { LanguageService } from '../language.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  languageSub: Subscription = new Subscription;
+  language: string = "Swedish";
+
+  constructor(private languageService: LanguageService ) { }
 
   ngOnInit(): void {
+
+    this.languageSub= this.languageService.chosenLanguage
+    .subscribe(
+      (chosenLanguage:string) => {
+        this.language = chosenLanguage;
+      }
+    )
+
+    this.language=this.languageService.getLanguage();
+
+  }
+
+  ngOnDestroy(): void {
+    this.languageSub.unsubscribe();
   }
 
 }

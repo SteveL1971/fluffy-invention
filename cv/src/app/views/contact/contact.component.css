@@ -26,3 +26,7 @@
 .radiusTop {
     border-radius: 10px 10px 0px 0px;
 }
+
+.radius {
+    border-radius: 10px;
+}

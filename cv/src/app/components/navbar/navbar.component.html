@@ -1,15 +1,18 @@
 <nav>
     <div class="container">
-      <h1><a routerLink="/">Hem</a></h1>
+      <!-- <h2><a routerLink="/">Hem</a></h2>
+      <h2><a routerLink="/">Hem</a></h2> -->
+      <img class="img-thumbnail" src="/assets/img/gb.png" alt="English" (click)="onChangeLanguage('English')">
+      <img class="img-thumbnail" src="/assets/img/swe.png" alt="Svenska" (click)="onChangeLanguage('Swedish')">
       <ul>
         <li>
-          <a routerLink="/">Om mig</a>
+          <a routerLink="/">{{language==='English'?'About me':'Om mig'}}</a>
         </li>
         <li>
           <a routerLink="/cv">CV</a>
         </li>
         <li>
-          <a routerLink="/contact">Kontakta</a>
+          <a routerLink="/contact">{{language==='English'?'Contact me':'Kontakta mig'}}</a>
         </li>
       </ul>
     </div>

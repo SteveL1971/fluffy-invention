@@ -7,15 +7,19 @@
     background-color: rgba(93, 102, 141, 0.178);
     border-radius: 10px 10px 0px 0px;
     padding: 1rem;
-    height: 1160px;
+    height: 1200px;
     flex: 1;
     text-align: center;
+}
+
+.text-align-left {
+    text-align: left;
 }
 .rightSide {
     background-color: rgba(73, 97, 204, 0.178);
     border-radius: 0px 0px 10px 10px;
     padding: 1rem;
-    height: 1160px;
+    height: 1200px;
     flex: 1.7;
 }
 
@@ -103,8 +107,16 @@ ul, p {
 }
 
 H5 {
-    font-size: 0.9rem;
-    font-weight: 700rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+p {
+    font-size: 0.8rem;
 }
 
 /* -------------------------------------------------------------------------------------------- */
@@ -121,14 +133,14 @@ H5 {
     .leftSide {
         border-radius: 10px 0px 0px 10px;
         padding: 1rem;
-        height: 1160px;
+        height: 1250px;
         flex: 1;
         text-align: left;
     }
     .rightSide {
         border-radius: 0px 10px 10px 0px;
         padding: 1rem;
-        height: 1160px;
+        height: 1250px;
         flex: 1.7;
     }
 

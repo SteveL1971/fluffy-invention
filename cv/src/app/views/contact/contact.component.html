@@ -1,10 +1,9 @@
-<!-- <p>contact works!</p> -->
-
-<div class="py-4">
-    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+<div *ngIf="!sent" class="py-4" style="display:flex; justify-content: center;">
+  
+    <form [formGroup]="contactForm" #f="ngForm" (ngSubmit)="sendEmail($event)" class="col-12 col-sm-12 col-md-8">
       <div class="header shadow radiusBottom">
         <div class="bar p-3 text-center mb-5 radiusTop">
-          <h2>Kontakta mig</h2>
+          <h2>{{language==='English'?'Contact me':'Kontakta mig'}}</h2>
         </div>
   
         <div class="row px-4">
@@ -12,20 +11,20 @@
             <input 
             type="text"
             class="form-control"
-            placeholder="Ditt namn"
+            placeholder="{{language==='English'?'Your name':'Ditt namn'}}"
             formControlName="fullName"
             [class.is-valid]="fullName.valid"
             [class.is-invalid]="fullName.invalid && (fullName.dirty && fullName.touched)"
             >
             <div *ngIf="(fullName.touched && fullName.dirty) && fullName.invalid">
               <small class="text-danger" *ngIf="fullName.errors?.required">
-                  Ett namn måste anges!
+                  {{language==='English'?'A name is required':'Ett namn måste anges!'}}
               </small>   
               <small class="text-danger" *ngIf="fullName.errors?.minlength">
-                  Ett längre namn måste anges!
+                  {{language==='English'?'A longer name is required':'Ett längre namn måste anges!'}}
               </small>   
               <small class="text-danger" *ngIf="fullName.errors?.maxlength">
-                  Ett kortare namn måste anges!
+                  {{language==='English'?'A shorter name is required':'Ett kortare namn måste anges!'}}
               </small>   
             </div>
           </div>
@@ -36,17 +35,17 @@
             <input 
             type="text"
             class="form-control"
-            placeholder="Din emailadress"
+            placeholder="{{language==='English'?'Your email':'Din emailadress'}}"
             formControlName="email"
             [class.is-valid]="email.valid"
             [class.is-invalid]="email.invalid && (email.dirty && email.touched)"
             >
             <div *ngIf="(email.touched && email.dirty) && email.invalid">
               <small class="text-danger" *ngIf="email.errors?.required">
-                  Ett emailadress måste anges!
+                  {{language==='English'?'An email is required':'En emailadress måste anges!'}}
               </small>   
               <small class="text-danger" *ngIf="email.errors?.email">
-                  Ett giltigt emailadress måste anges!
+                  {{language==='English'?'A valid email is required':'En giltig emailadress måste anges!'}}
               </small>   
             </div>
           </div>
@@ -57,20 +56,20 @@
             <input 
             type="text"
             class="form-control"
-            placeholder="Ämne"
+            placeholder="{{language==='English'?'Subject':'Ämne'}}"
             formControlName="subject"
             [class.is-valid]="subject.valid"
             [class.is-invalid]="subject.invalid && (subject.dirty && subject.touched)"
             >
             <div *ngIf="(subject.touched && subject.dirty) && subject.invalid">
               <small class="text-danger" *ngIf="subject.errors?.required">
-                  Ett ämne måste anges!
+                  {{language==='English'?'A subject is required':'Ett ämne måste anges!'}}
               </small>   
               <small class="text-danger" *ngIf="subject.errors?.minlength">
-                  Ett längre ämne måste anges!
+                {{language==='English'?'A longer subject is required':'Ett längre ämne måste anges!'}}
               </small>   
               <small class="text-danger" *ngIf="subject.errors?.maxlength">
-                Ett kortare ämne måste anges!
+                {{language==='English'?'A shorter subject is required':'Ett kortare ämne måste anges!'}}
               </small>   
             </div>
           </div>
@@ -82,7 +81,7 @@
             <textarea 
             class="form-control"
             rows=7
-            placeholder="Ditt meddelande"
+            placeholder="{{language==='English'?'Your message':'Ditt meddelande'}}"
             formControlName="message"
             [class.is-valid]="message.valid"
             [class.is-invalid]="message.invalid && (message.dirty && message.touched)"
@@ -90,13 +89,13 @@
             </textarea>
             <div *ngIf="(message.touched && message.dirty) && message.invalid">
               <small class="text-danger" *ngIf="message.errors?.required">
-                  Ett meddelande måste anges!
+                {{language==='English'?'A message is required':'Ett meddelande måste anges!'}}
               </small>   
               <small class="text-danger" *ngIf="message.errors?.minlength">
-                  Ett längre meddelande måste anges!
+                {{language==='English'?'A longer message is required':'Ett längre meddelande måste anges!'}}
               </small>   
               <small class="text-danger" *ngIf="message.errors?.maxlength">
-                  Ett kortare meddelande måste anges!
+                {{language==='English'?'A shorter message is required':'Ett kortare meddelande måste anges!'}}
               </small>   
             </div>
           </div>
@@ -104,10 +103,21 @@
   
         <div class="row px-4">
           <div class="mb-3 btnStyle">
-            <button [disabled]="!contactForm.valid" class="btn btn-primary w-50" [class.btn-light]="!contactForm.valid">Skicka</button>
+            <button [disabled]="!contactForm.valid" class="btn btn-primary w-50" [class.btn-light]="!contactForm.valid">{{language==='English'?'Send':'Skicka'}}</button>
           </div>
         </div>
   
       </div>
     </form>
+  </div>
+
+  <div *ngIf="sent" class="py-4" style="display:flex; justify-content: center;">
+    <div class="col-12 col-sm-12 col-md-8">
+      <div class="shadw">
+        <div class="bar p-3 text-center mb-5 radius">
+          <p>{{language==='English'?'Thanks! Your message has been sent!':'Tack! Ditt meddelande har skickats!'}}</p>
+        </div>
+
+      </div>
+    </div>
   </div>
